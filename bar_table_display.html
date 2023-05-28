@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flex;
+            height: auto;
+            width: 900px;
+            border-left: 1px solid gray;
+            border-bottom: 1px solid gray;
+            margin: 50px auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }
+        .container>div{
+            display: flex;
+            width: 50px;
+            background-color: skyblue;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .container div span {
+            margin-top: -20px;
+        }
+        .container div h4{
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        let count = prompt('How many items you want in this table?') 
+        let arr1 = []
+        let arr2 = []
+        for(let i=1; i<=count; i++){
+            arr1.push(prompt(`Please enter the name of item ${i}`))
+            arr2.push(prompt(`Please enter the amount of ${arr1[i-1]}`))
+        }
+
+        document.write(`<div class="container">`)
+            for(let i=0; i<arr2.length; i++){
+                document.write(`
+                <div style="height: ${arr2[i]}px">
+                <span>${arr2[i]}</span>
+                <h4>${arr1[i]}</h4>
+                </div>
+                `)
+            }
+        document.write(`</div>`)
+    </script>
+</body>
+</html>
